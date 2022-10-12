@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+// BASE-FILE
+@import "assets/scss/base/index";
+
+// VENDOR-FILE
+@import "assets/scss/vendor/index";
+
+@import '../node_modules/bootstrap-icons/font/bootstrap-icons';
+
+
+//COMMON STYLES
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $font-weight-medium;
+    background-color: $body-bg;
+    color: $body-color;
+    overflow: hidden;
+}
