@@ -1,10 +1,32 @@
 {
     "company": [
         {
-            "cName": "1Rivet",
-            "cDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-            "ctext":"hiral",
+            "companyName": "1Rivet",
+            "companyDisc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "companyText":"Angular",
+            "companyLogo":"",
             "id": 1
+        },
+        {
+            "companyName": "1Rivet-USA",
+            "companyDisc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "companyText":"Bootstrap",
+            "companyLogo":"",
+            "id": 2
+        },
+        {
+            "companyName": "1Rivet-India",
+            "companyDisc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "companyText":"Javascript",
+            "companyLogo":"",
+            "id": 3
+        },
+        {
+            "companyName": "1Rivet-UK",
+            "companyDisc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "companyText":"React",
+            "companyLogo":"",
+            "id": 4
         }
     ]
 }

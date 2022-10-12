@@ -11,6 +11,11 @@ const routes: Routes = [
     // Start: Children Routing Path
     children: [
       {
+        path: '',
+        pathMatch:'full',
+        redirectTo:'add'
+      },
+      {
         path: 'add',
         component: CompanyFormComponent,
       },
