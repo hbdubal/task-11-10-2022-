@@ -6,6 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CompanyService {
-  constructor() {}
+  public compUrl: string;
+
+  constructor(private http: HttpClient) {
+    this.compUrl = "  http://localhost:3000/company";
+  }
 
 }
