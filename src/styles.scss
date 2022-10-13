@@ -6,8 +6,11 @@
 // VENDOR-FILE
 @import "assets/scss/vendor/index";
 
+//Bootstrap Icons
 @import '../node_modules/bootstrap-icons/font/bootstrap-icons';
 
+//Multi select dropdown theme
+@import "~@ng-select/ng-select/themes/default.theme.css";
 
 //COMMON STYLES
 *,
