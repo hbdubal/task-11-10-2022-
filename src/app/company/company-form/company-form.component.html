@@ -19,17 +19,18 @@
                 </div>
             </div>
             <div class="my-3">
-                <ng-select [items]="tags" bindLabel="name" placeholder="Select Tags"
-                    [multiple]="true" formControlName="companyTags">
+                <ng-select [items]="tags" bindLabel="name" placeholder="Select Tags" [multiple]="true"
+                    formControlName="companyTags">
                 </ng-select>
                 <div
-                *ngIf="companyForm.get('companyTags')?.invalid && (isSubmitted || companyForm.get('companyTags')?.touched || companyForm.get('companyTags')?.dirty)">
-                <span class="text-danger" *ngIf="companyForm.get('companyTags')?.errors?.['required']">Please
-                    Please Select Tags*</span>
-            </div>
+                    *ngIf="companyForm.get('companyTags')?.invalid && (isSubmitted || companyForm.get('companyTags')?.touched || companyForm.get('companyTags')?.dirty)">
+                    <span class="text-danger" *ngIf="companyForm.get('companyTags')?.errors?.['required']">Please
+                        Please Select Tags*</span>
+                </div>
             </div>
             <div class="my-3">
-                <input type="text" class="form-control" placeholder="Select Logo">
+                <input formControlName="file" id="file" type="file" multiple class="form-control">
+                <!-- <input type="text" class="form-control" placeholder="Select Logo"> -->
             </div>
             <div class="my-3 d-flex justify-content-end">
                 <button type="reset" class="btn btn-primary me-4" (click)="onReset()">Cancle</button>
