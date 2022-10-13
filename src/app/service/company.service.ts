@@ -21,4 +21,6 @@ export class CompanyService {
   {
     return this.http.post<Company[]>(this.compUrl, company);
   }
+
+  
 }

@@ -27,6 +27,23 @@
       "companyTags": "React",
       "companyLogo": "",
       "id": 4
+    },
+    {
+      "companyName": "1-rivet-valsad",
+      "companyDescription": "At 1Rivet, we believe that we can partner with you and help you succeed in your technology investments and help you build for the future",
+      "companyTags": [
+        {
+          "id": 1,
+          "name": "Laravel"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "companyName": "",
+      "companyDescription": "",
+      "companyTags": "",
+      "id": 6
     }
   ]
 }

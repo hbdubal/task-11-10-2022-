@@ -39,6 +39,12 @@ export class CompanyFormComponent implements OnInit {
   //  Submit And Post Data On Button Click Event 
   submit() {
     this.isSubmitted = true;
+    this.companyService.createData(this.companyForm.value).subscribe(resp=>
+      {
+        this.router.navigate(['company']);
+        console.log(resp);
+      }
+    )
     if (this.companyForm.valid) {
       this.companyForm.value;
       console.log(this.companyForm.value);
