@@ -17,7 +17,16 @@
     <!-- End: Search-box -->
 
     <!-- Start: List Of Company -->
-   
+    <a href="" class="text-decoration-none listdata">
+        <ul class="list-group mt-3" *ngFor="let companyList of company">
+            <li class="list-group-item d-flex align-items-center justify-content-space-between">
+                {{companyList.companyName}}
+                <a href="" class="delete-icon">
+                    <span class="bi bi-x-square"></span>
+                </a>
+            </li>
+        </ul>
+    </a>
     <!-- End: List Of Company -->
-   
+
 </section>
