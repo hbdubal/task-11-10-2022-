@@ -2,29 +2,29 @@
     "company": [
         {
             "companyName": "1Rivet",
-            "companyDisc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-            "companyText":"Angular",
+            "companyDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "companyTags":"Angular",
             "companyLogo":"",
             "id": 1
         },
         {
             "companyName": "1Rivet-USA",
-            "companyDisc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-            "companyText":"Bootstrap",
+            "companyDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "companyTags":"Bootstrap",
             "companyLogo":"",
             "id": 2
         },
         {
             "companyName": "1Rivet-India",
-            "companyDisc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-            "companyText":"Javascript",
+            "companyDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "companyTags":"Javascript",
             "companyLogo":"",
             "id": 3
         },
         {
             "companyName": "1Rivet-UK",
-            "companyDisc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-            "companyText":"React",
+            "companyDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "companyTags":"React",
             "companyLogo":"",
             "id": 4
         }

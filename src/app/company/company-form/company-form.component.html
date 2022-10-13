@@ -1,20 +1,38 @@
 <section>
     <div class="container-fluid">
-        <form>
+        <form [formGroup]="empForm" (ngSubmit)="submit()">
             <div class="my-3">
-                <input type="text" class="form-control" placeholder="Company Name">
+                <input type="text" class="form-control" placeholder="Company Name" formControlName="companyName">
+                <div
+                    *ngIf="empForm.get('companyName')?.invalid && (isSubmitted || empForm.get('companyName')?.touched || empForm.get('companyName')?.dirty)">
+                    <span class="text-danger" *ngIf="empForm.get('companyName')?.errors?.['required']">Please Enter
+                        Company Name*</span>
+                </div>
             </div>
             <div class="my-3">
-                <input type="text" class="form-control" placeholder="Company Description">
+                <textarea class="form-control" placeholder="Company Description"
+                    formControlName="companyDescription"></textarea>
+                <div
+                    *ngIf="empForm.get('companyDescription')?.invalid && (isSubmitted || empForm.get('companyDescription')?.touched || empForm.get('companyDescription')?.dirty)">
+                    <span class="text-danger" *ngIf="empForm.get('companyDescription')?.errors?.['required']">Please
+                        Enter Company Description*</span>
+                </div>
             </div>
             <div class="my-3">
-                <input type="text" class="form-control" placeholder="Select Tags">
+                <ng-select [items]="tags" bindLabel="name" placeholder="Select Tags"
+                    [multiple]="true" formControlName="companyTags">
+                </ng-select>
+                <div
+                *ngIf="empForm.get('companyTags')?.invalid && (isSubmitted || empForm.get('companyTags')?.touched || empForm.get('companyTags')?.dirty)">
+                <span class="text-danger" *ngIf="empForm.get('companyTags')?.errors?.['required']">Please
+                    Please Select Tags*</span>
+            </div>
             </div>
             <div class="my-3">
                 <input type="text" class="form-control" placeholder="Select Logo">
             </div>
             <div class="my-3 d-flex justify-content-end">
-                <button type="reset" class="btn btn-primary me-4">Cancle</button>
+                <button type="reset" class="btn btn-primary me-4" (click)="onReset()">Cancle</button>
                 <button type="submit" class="btn btn-secondary">Save</button>
             </div>
         </form>
