@@ -22,11 +22,18 @@ export class CompanyListComponent implements OnInit {
     }
     )
   }
-  
+
   //Post Data
   addData() {
     this.companyService.createData(this.company).subscribe(data => {
       console.log(data);
+    })
+  }
+
+  //Delete Data
+  onDelete(id:number) {
+    this.companyService.deleteData(id).subscribe(resp => {
+      this.getCompanyData();
     })
   }
 }

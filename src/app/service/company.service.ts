@@ -22,5 +22,8 @@ export class CompanyService {
     return this.http.post<Company[]>(this.compUrl, company);
   }
 
-  
+   // Delete Data From DataBase
+   deleteData(id: number): Observable<Company> {
+    return this.http.delete<Company>(this.compUrl +  id)
+  }
 }
