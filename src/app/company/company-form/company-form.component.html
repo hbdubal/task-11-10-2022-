@@ -1,0 +1,41 @@
+<section>
+    <div class="container-fluid">
+        <form [formGroup]="companyForm" (ngSubmit)="submit()">
+            <div class="my-3">
+                <input type="text" class="form-control" placeholder="Company Name" formControlName="companyName">
+                <div
+                    *ngIf="companyForm.get('companyName')?.invalid && (isSubmitted || companyForm.get('companyName')?.touched || companyForm.get('companyName')?.dirty)">
+                    <span class="text-danger" *ngIf="companyForm.get('companyName')?.errors?.['required']">Please Enter
+                        Company Name*</span>
+                </div>
+            </div>
+            <div class="my-3">
+                <textarea class="form-control" placeholder="Company Description"
+                    formControlName="companyDescription"></textarea>
+                <div
+                    *ngIf="companyForm.get('companyDescription')?.invalid && (isSubmitted || companyForm.get('companyDescription')?.touched || companyForm.get('companyDescription')?.dirty)">
+                    <span class="text-danger" *ngIf="companyForm.get('companyDescription')?.errors?.['required']">Please
+                        Enter Company Description*</span>
+                </div>
+            </div>
+            <div class="my-3">
+                <ng-select [items]="tags" bindLabel="name" placeholder="Select Tags" [multiple]="true"
+                    formControlName="companyTags">
+                </ng-select>
+                <div
+                    *ngIf="companyForm.get('companyTags')?.invalid && (isSubmitted || companyForm.get('companyTags')?.touched || companyForm.get('companyTags')?.dirty)">
+                    <span class="text-danger" *ngIf="companyForm.get('companyTags')?.errors?.['required']">Please
+                        Please Select Tags*</span>
+                </div>
+            </div>
+            <div class="my-3">
+                <input formControlName="file" id="file" type="file" multiple class="form-control">
+                <!-- <input type="text" class="form-control" placeholder="Select Logo"> -->
+            </div>
+            <div class="my-3 d-flex justify-content-end">
+                <button type="reset" class="btn btn-primary me-4" (click)="onReset()">Cancle</button>
+                <button type="submit" class="btn btn-secondary">Save</button>
+            </div>
+        </form>
+    </div>
+</section>

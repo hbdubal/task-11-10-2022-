@@ -1,5 +1,7 @@
 export class Company{
-    cname?:string;
-    cdesc?:string;
-    ctext?:string;
+    id!:number;
+    companyName?:string;
+    companyDescription?:string;
+    companyTags?:string;
+    companyLogo?:any;
 }

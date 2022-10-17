@@ -1,16 +1,27 @@
-<section class="mt-5">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="d-flex justify-content-space-between">
-                    <h4>Company</h4>
-                    <div class="">
-                        <a href="">
-                            <span class="bi bi-plus-circle"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+<section>
+    <!-- Start: List Heading -->
+    <div class="dataList d-flex justify-content-space-between align-items-center">
+        <h5>Company</h5>
+        <div class="add-icon">
+            <button class="add-icon bi bi-plus-circle border-0 bg-transparent fs-3"></button>
         </div>
     </div>
+    <!-- End: List Heading -->
+
+    <!-- Start: Search-box -->
+    <div class="search-box">
+        <input type="search" name="" id="">
+    </div>
+    <!-- End: Search-box -->
+
+    <!-- Start: List Of Company -->
+    <a href="" class="text-decoration-none listdata">
+        <ul class="list-group mt-3" *ngFor="let companyList of company">
+            <li class="list-group-item d-flex align-items-center justify-content-space-between">
+                {{companyList.companyName}}
+                <button class="delete-icon bi bi-x-square border-0 bg-transparent" (click)="onDelete(company.id)"></button>
+            </li>
+        </ul>
+    </a>
+    <!-- End: List Of Company -->
 </section>

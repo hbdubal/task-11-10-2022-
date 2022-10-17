@@ -5,8 +5,10 @@ import { CompanyRoutingModule } from './company-routing.module';
 import { CompanyComponent } from './company.component';
 import { CompanyFormComponent } from './company-form/company-form.component';
 import { CompanyListComponent } from './company-list/company-list.component';
-import { ReactiveFormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
+import { CompanyService } from '../service/company.service';
+import { HttpClientModule } from '@angular/common/http';
+import {NgSelectModule} from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,11 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     CompanyRoutingModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    NgSelectModule
+  ],
+  providers: [CompanyService]
 })
 export class CompanyModule { }
