@@ -3,24 +3,25 @@
     <div class="dataList d-flex justify-content-space-between align-items-center">
         <h5>Company</h5>
         <div class="add-icon">
-            <button class="add-icon bi bi-plus-circle border-0 bg-transparent fs-3"></button>
+            <button class="add-icon bi bi-plus-circle border-0 bg-transparent fs-3" (click)="onAdd()"></button>
         </div>
     </div>
     <!-- End: List Heading -->
 
     <!-- Start: Search-box -->
     <div class="search-box">
-        <input type="search" name="" id="">
+        <input class="searchBar w-100" type="text" placeholder="Search here..." />
     </div>
     <!-- End: Search-box -->
 
     <!-- Start: List Of Company -->
-    <a href="" class="text-decoration-none listdata">
-        <ul class="list-group mt-3" *ngFor="let companyList of company">
+    <a href="" class="text-decoration-none listdata ">
+        <ul class="list-group mt-3 d-flex" *ngFor="let companyList of company">
             <li class="list-group-item d-flex align-items-center justify-content-space-between">
-               <span>{{companyList.companyName | nameInitials}}</span> 
+                {{companyList.companyName | nameInitials}}
                 {{companyList.companyName | titlecase}}
-                <button class="delete-icon bi bi-x-square border-0 bg-transparent" (click)="onDelete(companyList.id)"></button>
+                <button class="delete-icon bi bi-x-square border-0 bg-transparent"
+                    (click)="onDelete(companyList.id)"></button>
             </li>
         </ul>
     </a>

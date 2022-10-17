@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CompanyService } from 'src/app/service/company.service';
 
 
@@ -9,7 +10,8 @@ import { CompanyService } from 'src/app/service/company.service';
 })
 export class CompanyListComponent implements OnInit {
   company: any;
-  constructor(private companyService: CompanyService) { }
+  public searchText: string = '';
+  constructor(private companyService: CompanyService, private router: Router) { }
 
   ngOnInit(): void {
     this.getCompanyData()
@@ -31,9 +33,13 @@ export class CompanyListComponent implements OnInit {
   }
 
   //Delete Data
-  onDelete(id:number) {
+  onDelete(id: number) {
     this.companyService.deleteData(id).subscribe(resp => {
       this.getCompanyData();
     })
+  }
+
+  onAdd() {
+    this.router.navigate(['company/add']);
   }
 }
