@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CustomPipe } from './custom.pipe';
-
-
+import { NameInitialsPipe } from './name-initials.pipe';
 
 @NgModule({
   declarations: [
-    CustomPipe
+  NameInitialsPipe
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    NameInitialsPipe
   ]
 })
 export class SharedModule { }

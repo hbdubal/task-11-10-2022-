@@ -18,8 +18,9 @@
     <a href="" class="text-decoration-none listdata">
         <ul class="list-group mt-3" *ngFor="let companyList of company">
             <li class="list-group-item d-flex align-items-center justify-content-space-between">
-                {{companyList.companyName}}
-                <button class="delete-icon bi bi-x-square border-0 bg-transparent" (click)="onDelete(company.id)"></button>
+               <span>{{companyList.companyName | nameInitials}}</span> 
+                {{companyList.companyName | titlecase}}
+                <button class="delete-icon bi bi-x-square border-0 bg-transparent" (click)="onDelete(companyList.id)"></button>
             </li>
         </ul>
     </a>
