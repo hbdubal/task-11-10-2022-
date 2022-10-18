@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { CompanyService } from 'src/app/service/company.service';
 
@@ -11,7 +11,12 @@ import { CompanyService } from 'src/app/service/company.service';
 export class CompanyListComponent implements OnInit {
   public company: any;
   public searchText: string = '';
-  constructor(private companyService: CompanyService, private router: Router) { }
+
+  @Output() companyListPatch: EventEmitter<string>
+  constructor(private companyService: CompanyService, private router: Router) {
+    this.companyListPatch = new EventEmitter<string>;
+    this.company = [];
+  }
 
   ngOnInit(): void {
     this.getCompanyData()
@@ -32,6 +37,12 @@ export class CompanyListComponent implements OnInit {
     })
   }
 
+  //Update Data
+  onEditList(company: any) {
+    this.router.navigate(['company/edit', company.id])
+    this.companyListPatch.emit(company)
+  }
+
   //Delete Data
   onDelete(id: number) {
     this.companyService.deleteData(id).subscribe(resp => {
@@ -39,7 +50,10 @@ export class CompanyListComponent implements OnInit {
     })
   }
 
+  //Form onclick Event
   onAdd() {
     this.router.navigate(['company/add']);
   }
+
+
 }

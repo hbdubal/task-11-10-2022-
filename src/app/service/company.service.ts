@@ -22,8 +22,14 @@ export class CompanyService {
     return this.http.post<Company>(this.compUrl, company);
   }
 
+  // Update Data From DataBase
+  updatelist(employee: Company, id: number): Observable<Company> {
+    return this.http.put<Company>(this.compUrl + id, Company)
+  }
+
    // Delete Data From DataBase
    deleteData(id: number): Observable<Company> {
     return this.http.delete<Company>(this.compUrl +id)
   }
+  
 }

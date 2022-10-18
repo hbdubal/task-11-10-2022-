@@ -16,17 +16,6 @@
       "id": 5
     },
     {
-      "companyName": "kirangandhi",
-      "companyDescription": "dvfgfhgfhgfhgfhgfhgfhgfhgf",
-      "companyTags": [
-        {
-          "id": 2,
-          "name": "Codeigniter"
-        }
-      ],
-      "id": 6
-    },
-    {
       "companyName": "jinal tandel",
       "companyDescription": "sdfdfdgfg",
       "companyTags": [
@@ -58,6 +47,17 @@
         }
       ],
       "id": 9
+    },
+    {
+      "companyName": "kiran gandhi",
+      "companyDescription": "sdsdsdfsd",
+      "companyTags": [
+        {
+          "id": 2,
+          "name": "Codeigniter"
+        }
+      ],
+      "id": 10
     }
   ]
 }
