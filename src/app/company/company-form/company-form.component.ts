@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CompanyService } from 'src/app/service/company.service';
 
 @Component({
@@ -11,8 +11,9 @@ import { CompanyService } from 'src/app/service/company.service';
 export class CompanyFormComponent implements OnInit {
   public companyForm: FormGroup;
   isSubmitted: boolean = false;
+  public id: any;
 
-  constructor(private fb: FormBuilder, private companyService:CompanyService, private router:Router) {
+  constructor(private fb: FormBuilder, private companyService:CompanyService, private router:Router, private activatedRoute:ActivatedRoute) {
     this.companyForm = new FormGroup('');
   }
   //Multiselected Drowpdown List
@@ -42,12 +43,10 @@ export class CompanyFormComponent implements OnInit {
     this.companyService.createData(this.companyForm.value).subscribe(resp=>
       {
         this.router.navigate(['company']);
-        console.log(resp);
       }
     )
     if (this.companyForm.valid) {
       this.companyForm.value;
-      console.log(this.companyForm.value);
     }
   }
 

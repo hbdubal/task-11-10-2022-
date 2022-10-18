@@ -11,7 +11,11 @@ import { CompanyService } from 'src/app/service/company.service';
 export class CompanyListComponent implements OnInit {
   public company: any;
   public searchText: string = '';
-  constructor(private companyService: CompanyService, private router: Router) { }
+
+
+  constructor(private companyService: CompanyService, private router: Router) {
+    this.company = [];
+  }
 
   ngOnInit(): void {
     this.getCompanyData()
@@ -39,7 +43,10 @@ export class CompanyListComponent implements OnInit {
     })
   }
 
+  //Form onclick Event
   onAdd() {
     this.router.navigate(['company/add']);
   }
+
+
 }

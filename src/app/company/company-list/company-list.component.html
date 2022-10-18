@@ -18,7 +18,7 @@
     <a href="" class="text-decoration-none listdata">
         <ul class="list-group mt-3 d-flex" *ngFor="let companyList of company | searchFilter:searchText">
             <li class="list-group-item d-flex align-items-center justify-content-space-between">
-                <span class="border border-dark rounded-circle p-2"> {{companyList.companyName | nameInitials}}</span>
+                <span class="border border-dark rounded-circle p-1"> {{companyList.companyName | nameInitials}}</span>
                 <span> {{companyList.companyName | titlecase}} </span>
                 <button class="delete-icon bi bi-x-square border-0 bg-transparent"
                     (click)="onDelete(companyList.id)"></button>
