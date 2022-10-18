@@ -9,7 +9,7 @@ import { CompanyService } from 'src/app/service/company.service';
   styleUrls: ['./company-list.component.scss']
 })
 export class CompanyListComponent implements OnInit {
-  company: any;
+  public company: any;
   public searchText: string = '';
   constructor(private companyService: CompanyService, private router: Router) { }
 

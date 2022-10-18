@@ -36,6 +36,28 @@
         }
       ],
       "id": 7
+    },
+    {
+      "companyName": "Hem Chudgar",
+      "companyDescription": "dfffffffffffffffffffffffffffffffffghgjhgjhgjhgjhjh",
+      "companyTags": [
+        {
+          "id": 5,
+          "name": "Angular"
+        }
+      ],
+      "id": 8
+    },
+    {
+      "companyName": "sheetal patel",
+      "companyDescription": "dsdfdsfdfdfdf",
+      "companyTags": [
+        {
+          "id": 3,
+          "name": "React"
+        }
+      ],
+      "id": 9
     }
   ]
 }
