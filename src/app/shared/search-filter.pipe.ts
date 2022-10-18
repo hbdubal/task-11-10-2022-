@@ -11,7 +11,7 @@ export class SearchFilterPipe implements PipeTransform {
       return values;
     }
     else {
-      return values.filter((company) => {
+      values.filter((company) => {
         return company.companyName.toLowerCase().indexOf(searchText.toLowerCase()) !== -1
       });
     }

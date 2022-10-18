@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'nameInitials'
 })
 export class NameInitialsPipe implements PipeTransform {
-
+  
   transform(value: string): string {
     value=value.toUpperCase();
     let name = "";

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CompanyService } from 'src/app/service/company.service';
+import { Company } from '../company.model';
 
 @Component({
   selector: 'app-company-form',
@@ -11,9 +12,14 @@ import { CompanyService } from 'src/app/service/company.service';
 export class CompanyFormComponent implements OnInit {
   public companyForm: FormGroup;
   isSubmitted: boolean = false;
+  public id: any;
 
-  constructor(private fb: FormBuilder, private companyService:CompanyService, private router:Router) {
+  constructor(private fb: FormBuilder, public companyService:CompanyService, private router:Router, private activatedRoute:ActivatedRoute) {
     this.companyForm = new FormGroup('');
+    this.activatedRoute.params.subscribe((params)=>
+    {
+      this.id=params['id'];
+    })
   }
   //Multiselected Drowpdown List
   tags = [
@@ -42,21 +48,23 @@ export class CompanyFormComponent implements OnInit {
     this.companyService.createData(this.companyForm.value).subscribe(resp=>
       {
         this.router.navigate(['company']);
-        console.log(resp);
       }
     )
     if (this.companyForm.valid) {
+      if(this.id)
+      {
+        
+      }
       this.companyForm.value;
-      console.log(this.companyForm.value);
     }
   }
+   //  Update Data On List Click Event 
 
   //  Reset Data On Button Click Event 
   onReset() {
     this.companyForm.reset();
   }
 }
-
 
 
 
