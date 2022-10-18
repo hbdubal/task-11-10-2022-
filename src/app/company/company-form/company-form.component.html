@@ -1,4 +1,4 @@
-<section class="border p-3">
+<section class="border border-dark p-3">
     <div class="container-fluid">
         <form [formGroup]="companyForm" (ngSubmit)="submit()">
             <div class="my-3">
@@ -29,8 +29,11 @@
                 </div>
             </div>
             <div class="my-3">
-                <input formControlName="file" id="file" type="file" multiple class="form-control">
-                <!-- <input type="text" class="form-control" placeholder="Select Logo"> -->
+                <input formControlName="companyLogo" id="file" type="file" class="form-control">
+                <div *ngIf="companyForm.get('companyLogo')?.invalid && (isSubmitted || companyForm.get('companyLogo')?.touched || companyForm.get('companyLogo')?.dirty)">
+                    <span class="text-danger" *ngIf="companyForm.get('companyLogo')?.errors?.['required']">Please
+                        Please Select Logo*</span>
+                </div>
             </div>
             <div class="my-3 d-flex justify-content-end">
                 <button type="reset" class="btn btn-warning me-4" (click)="onReset()">Cancle</button>

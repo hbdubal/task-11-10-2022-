@@ -38,7 +38,8 @@ export class CompanyFormComponent implements OnInit {
     this.companyForm = this.fb.group({
       companyName: ['', [Validators.required]],
       companyDescription: ['', [Validators.required]],
-      companyTags:['', [Validators.required]]
+      companyTags:['', [Validators.required]],
+      companyLogo:['', [Validators.required]]
     })
   }
 
@@ -51,19 +52,28 @@ export class CompanyFormComponent implements OnInit {
       }
     )
     if (this.companyForm.valid) {
-      if(this.id)
-      {
-        
+      if (this.id) {
+        this.updateData();
+      }
+      else {
+	  
       }
       this.companyForm.value;
     }
   }
    //  Update Data On List Click Event 
-
+   updateData() {
+    this.companyService.updatelist(this.companyForm.value,this.id).subscribe((res)=> {
+      console.log(res);
+      
+    });
+  }
   //  Reset Data On Button Click Event 
   onReset() {
     this.companyForm.reset();
   }
+
+  
 }
 
 

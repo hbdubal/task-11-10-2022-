@@ -39,8 +39,8 @@ export class CompanyListComponent implements OnInit {
 
   //Update Data
   onEditList(company: any) {
-    this.router.navigate(['company/edit', company.id])
-    this.companyListPatch.emit(company)
+    this.router.navigate(['company/edit' + company.id + '']);
+    // this.companyListPatch.emit(company);
   }
 
   //Delete Data
