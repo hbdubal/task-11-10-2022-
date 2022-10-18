@@ -1,7 +1,8 @@
 export class Company{
     id!:number;
-    companyName?:string;
-    companyDescription?:string;
-    companyTags?:string;
-    companyLogo?:any;
+    companyName!:string;
+    companyDescription!:string;
+    companyTags!:string;
+    companyLogo!:any;
+  
 }
