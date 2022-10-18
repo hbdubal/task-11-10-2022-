@@ -6,14 +6,14 @@ import { Company } from '../company/company.model';
 })
 export class SearchFilterPipe implements PipeTransform {
 
-  transform(values: Company[], searchText: string) {
-    if (values.length === 0 || searchText === '') {
+  transform(values: Company[], searchText: any): Company[] {
+    if (!values || !searchText) {
       return values;
     }
     else {
       return values.filter((company) => {
-        return company.companyName?.toLowerCase() === searchText.toLowerCase()
-      })
+        return company.companyName.toLowerCase().indexOf(searchText.toLowerCase()) !== -1
+      });
     }
   }
 }

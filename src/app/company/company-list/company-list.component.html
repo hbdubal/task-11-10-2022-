@@ -10,16 +10,16 @@
 
     <!-- Start: Search-box -->
     <div class="search-box">
-        <input class="searchBar w-100" type="text" placeholder="Search here..." />
+        <input class="searchBar w-100" type="text" placeholder="Search here..." [(ngModel)]="searchText" />
     </div>
     <!-- End: Search-box -->
 
     <!-- Start: List Of Company -->
-    <a href="" class="text-decoration-none listdata ">
-        <ul class="list-group mt-3 d-flex" *ngFor="let companyList of company">
+    <a href="" class="text-decoration-none listdata">
+        <ul class="list-group mt-3 d-flex" *ngFor="let companyList of company | searchFilter:searchText">
             <li class="list-group-item d-flex align-items-center justify-content-space-between">
-                {{companyList.companyName | nameInitials}}
-                {{companyList.companyName | titlecase}}
+                <span class="border border-dark rounded-circle p-2"> {{companyList.companyName | nameInitials}}</span>
+                <span> {{companyList.companyName | titlecase}} </span>
                 <button class="delete-icon bi bi-x-square border-0 bg-transparent"
                     (click)="onDelete(companyList.id)"></button>
             </li>
