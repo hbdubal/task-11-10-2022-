@@ -1,7 +1,16 @@
-.navbar{
+.header-navbar {
     background-color: #85b1c7;
-    a
+
+    .navbar {
+        padding-bottom: 0;
+        a {
+            color: #ffffff;
+        }
+    }
+    .breadcrumb
     {
+        padding-left: 55px;
         color: #ffffff;
+        cursor: pointer;
     }
 }

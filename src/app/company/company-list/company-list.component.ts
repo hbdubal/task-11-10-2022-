@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BreadcrumbServiceService } from 'src/app/core/service/breadcrumb-service.service';
 import { CompanyService } from 'src/app/service/company.service';
 
 
@@ -12,7 +13,7 @@ export class CompanyListComponent implements OnInit {
   public company: any;
   public searchText: string = '';
 
-  constructor(private companyService: CompanyService, private router: Router) {
+  constructor(private companyService: CompanyService, private router: Router,private breadcrumbService:BreadcrumbServiceService) {
     this.company = [];
   }
 
@@ -31,14 +32,13 @@ export class CompanyListComponent implements OnInit {
   //Post Data
   addData() {
     this.companyService.createData(this.company).subscribe(data => {
-      console.log(data);
     })
   }
 
   //Update Data
   onEditList(id: number) {
     this.router.navigate(['company/edit', id])
-    console.log(id)
+    this.breadcrumbService.breadcrumb.next('edit');
   }
 
   //Delete Data
@@ -51,5 +51,6 @@ export class CompanyListComponent implements OnInit {
   //Form onclick Event
   onAdd() {
     this.router.navigate(['company/add']);
+    this.breadcrumbService.breadcrumb.next('add');
   }
 }
