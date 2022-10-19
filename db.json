@@ -2,62 +2,71 @@
   "company": [
     {
       "companyName": "hiral dubal",
-      "companyDescription": "xzcdfdgfdgfdgfdgdfg",
-      "companyTags": [
-        {
-          "id": 1,
-          "name": "Laravel"
-        },
-        {
-          "id": 2,
-          "name": "Codeigniter"
-        }
-      ],
-      "id": 5
-    },
-    {
-      "companyName": "jinal tandel",
-      "companyDescription": "sdfdfdgfg",
+      "companyDescription": "zcbngvnfxbsndfn",
       "companyTags": [
         {
           "id": 2,
           "name": "Codeigniter"
         }
       ],
-      "id": 7
+      "companyLogo": "",
+      "id": 1
     },
     {
-      "companyName": "Hem Chudgar",
-      "companyDescription": "dfffffffffffffffffffffffffffffffffghgjhgjhgjhgjhjh",
+      "companyName": "kiran gandhi",
+      "companyDescription": "fbcvnvdfdfndfh",
       "companyTags": [
         {
           "id": 5,
           "name": "Angular"
         }
       ],
-      "id": 8
+      "companyLogo": "",
+      "id": 2
+    },
+    {
+      "companyName": "yesha gandhi",
+      "companyDescription": "fbcvnvdfdfndfhsvsdbvds",
+      "companyTags": [
+        {
+          "id": 5,
+          "name": "Angular"
+        },
+        {
+          "id": 2,
+          "name": "Codeigniter"
+        }
+      ],
+      "companyLogo": "",
+      "id": 3
     },
     {
       "companyName": "sheetal patel",
-      "companyDescription": "dsdfdsfdfdfdf",
+      "companyDescription": "fdfdfdf",
+      "companyTags": [
+        {
+          "id": 2,
+          "name": "Codeigniter"
+        },
+        {
+          "id": 3,
+          "name": "React"
+        }
+      ],
+      "companyLogo": "",
+      "id": 4
+    },
+    {
+      "companyName": "hem chudgar",
+      "companyDescription": "dsddsds",
       "companyTags": [
         {
           "id": 3,
           "name": "React"
         }
       ],
-      "id": 9
-    },
-    {
-      "companyName": "kiran gandhi",
-      "companyDescription": "sdsdsdfsd",
-      "companyTags": [
-        {
-          "id": 2,
-          "name": "Codeigniter"
-        }
-      ],
-      "id": 10
+      "companyLogo": null,
+      "id": 5
     }
   ]
 }

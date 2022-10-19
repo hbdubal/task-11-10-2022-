@@ -10,26 +10,29 @@ export class CompanyService {
   constructor(private http: HttpClient) {
     this.compUrl = "http://localhost:3000/company/";
   }
-  
+
   // Get Data From DataBase
   getData(): Observable<Company[]> {
     return this.http.get<Company[]>(this.compUrl);
   }
+  // Get Data From DataBase By Id
+  getDataById(id: number): Observable<Company> {
+    return this.http.get<Company>(this.compUrl + id)
+  }
 
   // Create Data From DataBase
-  createData(company:Company):Observable<Company>
-  {
+  createData(company: Company): Observable<Company> {
     return this.http.post<Company>(this.compUrl, company);
   }
 
   // Update Data From DataBase
-  updatelist(employee: Company, id: number): Observable<Company> {
+  updatelist(company: Company, id: number): Observable<Company> {
     return this.http.put<Company>(this.compUrl + id, Company)
   }
 
-   // Delete Data From DataBase
-   deleteData(id: number): Observable<Company> {
-    return this.http.delete<Company>(this.compUrl +id)
+  // Delete Data From DataBase
+  deleteData(id: number): Observable<Company> {
+    return this.http.delete<Company>(this.compUrl + id)
   }
-  
+
 }

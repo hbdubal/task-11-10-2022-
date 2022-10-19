@@ -13,53 +13,67 @@ export class CompanyFormComponent implements OnInit {
   public companyForm: FormGroup;
   isSubmitted: boolean = false;
   public id: any;
+  company: any;
 
-  constructor(private fb: FormBuilder, public companyService:CompanyService, private router:Router, private activatedRoute:ActivatedRoute) {
+  constructor(private fb: FormBuilder, public companyService: CompanyService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.companyForm = new FormGroup('');
-    this.activatedRoute.params.subscribe((params)=>
-    {
-      this.id=params['id'];
+    this.activatedRoute.params.subscribe((params) => {
+      this.id = params['id'];
+      if(this.id)
+      {
+        this.getCompanybyId();
+      }
     })
   }
   //Multiselected Drowpdown List
   tags = [
-    {id: 1, name: 'Laravel'},
-    {id: 2, name: 'Codeigniter'},
-    {id: 3, name: 'React'},
-    {id: 4, name: 'PHP'},
-    {id: 5, name: 'Angular'},
-    {id: 6, name: 'Vue'},
-    {id: 7, name: 'JQuery'},
-    {id: 8, name: 'Javascript'},
+    { id: 1, name: 'Laravel' },
+    { id: 2, name: 'Codeigniter' },
+    { id: 3, name: 'React' },
+    { id: 4, name: 'PHP' },
+    { id: 5, name: 'Angular' },
+    { id: 6, name: 'Vue' },
+    { id: 7, name: 'JQuery' },
+    { id: 8, name: 'Javascript' },
   ];
-    
-//  Form Validation Method 
+
+  //  Form Validation Method 
   ngOnInit(): void {
     this.companyForm = this.fb.group({
       companyName: ['', [Validators.required]],
       companyDescription: ['', [Validators.required]],
-      companyTags:['', [Validators.required]]
+      companyTags: ['', [Validators.required]],
+      companyLogo: ['', [Validators.required]]
     })
   }
 
   //  Submit And Post Data On Button Click Event 
   submit() {
     this.isSubmitted = true;
-    this.companyService.createData(this.companyForm.value).subscribe(resp=>
-      {
-        this.router.navigate(['company']);
-      }
+    this.companyService.createData(this.companyForm.value).subscribe(resp => {
+      this.router.navigate(['company']);
+    }
     )
     if (this.companyForm.valid) {
-      if(this.id)
-      {
-        
+      if (this.id) {
+        this.onUpdate();
       }
       this.companyForm.value;
     }
   }
-   //  Update Data On List Click Event 
 
+  //  Update and edit data
+  onUpdate() {
+    this.companyService.updatelist(this.companyForm.value, this.id).subscribe((data => {
+      this.router.navigate(['company']);
+    }))
+  }
+  getCompanybyId() {
+    this.companyService.getDataById(this.id).subscribe((data)=>
+    {
+      this.companyForm.patchValue(data);
+    })
+  }
   //  Reset Data On Button Click Event 
   onReset() {
     this.companyForm.reset();
