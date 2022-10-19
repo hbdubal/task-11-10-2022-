@@ -26,8 +26,8 @@ export class CompanyService {
   }
 
   // Update Data From DataBase
-  updatelist(company: Company, id: number): Observable<Company> {
-    return this.http.put<Company>(this.compUrl + id, Company)
+  updatelist(id: number, company:Company): Observable<Company> {
+    return this.http.put<Company>(this.compUrl + id, company)
   }
 
   // Delete Data From DataBase
