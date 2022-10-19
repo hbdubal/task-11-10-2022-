@@ -19,8 +19,8 @@ export class CompanyFormComponent implements OnInit {
     this.companyForm = new FormGroup('');
     this.activatedRoute.params.subscribe((params) => {
       this.id = params['id'];
-      if(this.id)
-      {
+
+      if (this.id) {
         this.getCompanybyId();
       }
     })
@@ -43,34 +43,33 @@ export class CompanyFormComponent implements OnInit {
       companyName: ['', [Validators.required]],
       companyDescription: ['', [Validators.required]],
       companyTags: ['', [Validators.required]],
-      companyLogo: ['', [Validators.required]]
+      companyLogo: ['']
     })
   }
 
   //  Submit And Post Data On Button Click Event 
   submit() {
     this.isSubmitted = true;
-    this.companyService.createData(this.companyForm.value).subscribe(resp => {
-      this.router.navigate(['company']);
-    }
-    )
     if (this.companyForm.valid) {
       if (this.id) {
         this.onUpdate();
       }
-      this.companyForm.value;
+      else {
+        this.companyService.createData(this.companyForm.value).subscribe(resp => {
+          this.router.navigate(['company']);
+        })
+      }
     }
   }
 
   //  Update and edit data
   onUpdate() {
-    this.companyService.updatelist(this.companyForm.value, this.id).subscribe((data => {
+    this.companyService.updatelist(this.id, this.companyForm.value).subscribe((data => {
       this.router.navigate(['company']);
     }))
   }
   getCompanybyId() {
-    this.companyService.getDataById(this.id).subscribe((data)=>
-    {
+    this.companyService.getDataById(this.id).subscribe((data) => {
       this.companyForm.patchValue(data);
     })
   }

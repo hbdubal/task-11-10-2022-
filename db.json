@@ -1,7 +1,7 @@
 {
   "company": [
     {
-      "companyName": "hiral dubal",
+      "companyName": "hiral duballll",
       "companyDescription": "zcbngvnfxbsndfn",
       "companyTags": [
         {
@@ -57,15 +57,15 @@
       "id": 4
     },
     {
-      "companyName": "hem chudgar",
-      "companyDescription": "dsddsds",
+      "companyName": "hem chudgarr",
+      "companyDescription": "front-end developer",
       "companyTags": [
         {
-          "id": 3,
-          "name": "React"
+          "id": 5,
+          "name": "Angular"
         }
       ],
-      "companyLogo": null,
+      "companyLogo": "",
       "id": 5
     }
   ]
