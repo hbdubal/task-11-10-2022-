@@ -7,7 +7,6 @@ const routes: Routes = [
   {
     path: '',
     component: CompanyComponent,
-
     // Start: Children Routing Path
     children: [
       {
@@ -18,10 +17,12 @@ const routes: Routes = [
       {
         path: 'add',
         component: CompanyFormComponent,
+       
       },
       {
         path: 'edit/:id',
-        component: CompanyFormComponent
+        component: CompanyFormComponent,
+        
       }
     ]
     // End: Children Routing Path

@@ -1,5 +1,6 @@
-<section class="border p-3">
+<section class="p-3 bg-white">
     <div class="container-fluid">
+        <h4>company</h4>
         <form [formGroup]="companyForm" (ngSubmit)="submit()">
             <div class="my-3">
                 <input type="text" class="form-control" placeholder="Company Name" formControlName="companyName">
@@ -29,7 +30,7 @@
                 </div>
             </div>
             <div class="my-3">
-                <input formControlName="file" id="file" type="file" multiple class="form-control">
+                <input formControlName="companyLogo" id="file" type="file" multiple class="form-control">
                 <!-- <input type="text" class="form-control" placeholder="Select Logo"> -->
             </div>
             <div class="my-3 d-flex justify-content-end">
