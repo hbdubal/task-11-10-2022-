@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BreadcrumbServiceService } from 'src/app/core/service/breadcrumb-service.service';
 import { CompanyService } from 'src/app/service/company.service';
+import { Company } from '../company.model';
 
 
 @Component({
@@ -12,8 +13,9 @@ import { CompanyService } from 'src/app/service/company.service';
 export class CompanyListComponent implements OnInit {
   public company: any;
   public searchText: string = '';
+  public companyList: Company[] = [];
 
-  constructor(private companyService: CompanyService, private router: Router,private breadcrumbService:BreadcrumbServiceService) {
+  constructor(private companyService: CompanyService, private router: Router, private breadcrumbService: BreadcrumbServiceService) {
     this.company = [];
   }
 
@@ -43,9 +45,12 @@ export class CompanyListComponent implements OnInit {
 
   //Delete Data
   onDelete(id: number) {
-    this.companyService.deleteData(id).subscribe(resp => {
-      this.getCompanyData();
-    })
+    if (confirm('Are you sure you want to delete this list??')) {
+      this.companyService.deleteData(id).subscribe(resp => {
+        this.getCompanyData();
+      });
+      this.router.navigate(['company/add']);
+    }
   }
 
   //Form onclick Event
