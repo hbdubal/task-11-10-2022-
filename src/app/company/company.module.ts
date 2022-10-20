@@ -10,6 +10,7 @@ import { CompanyService } from '../service/company.service';
 import { HttpClientModule } from '@angular/common/http';
 import {NgSelectModule} from '@ng-select/ng-select';
 import { SharedModule } from '../shared/shared.module';
+import { CompanyResolverService } from '../service/company-resolver.service';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,6 @@ import { SharedModule } from '../shared/shared.module';
     NgSelectModule,
     SharedModule
   ],
-  providers: [CompanyService]
+  providers: [CompanyService,CompanyResolverService]
 })
 export class CompanyModule { }

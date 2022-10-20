@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BreadcrumbServiceService } from 'src/app/core/service/breadcrumb-service.service';
 import { CompanyService } from 'src/app/service/company.service';
+import { Company } from '../company.model';
 
 
 @Component({
@@ -12,12 +13,14 @@ import { CompanyService } from 'src/app/service/company.service';
 export class CompanyListComponent implements OnInit {
   public company: any;
   public searchText: string = '';
+  public data:any
 
-  constructor(private companyService: CompanyService, private router: Router,private breadcrumbService:BreadcrumbServiceService) {
+  constructor(private companyService: CompanyService, private router: Router,private breadcrumbService:BreadcrumbServiceService, private activateRoute:ActivatedRoute) {
     this.company = [];
   }
 
   ngOnInit(): void {
+   this.data=this.activateRoute.snapshot.data;
     this.getCompanyData()
   }
 
