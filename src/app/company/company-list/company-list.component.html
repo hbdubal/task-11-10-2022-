@@ -17,8 +17,10 @@
     <!-- Start: List Of Company -->
     <a class="text-decoration-none listdata">
         <ul class="list-group mt-3 d-flex" *ngFor="let companyList of company | searchFilter:searchText">
-            <li class="list-group-item d-flex align-items-center justify-content-space-between" (click)="onEditList(companyList.id)">
-                <span class="p-2 rounded-circle" style="background-color: #85b1c7;"> {{companyList.companyName | nameInitials}}</span>
+            <li class="list-group-item d-flex align-items-center justify-content-space-between"
+                (click)="onEditList(companyList.id)">
+                <span class="p-2 rounded-circle" style="background-color: #85b1c7;"> {{companyList.companyName |
+                    nameInitials}}</span>
                 <span> {{companyList.companyName | titlecase}} </span>
                 <button class="delete-icon bi bi-x-square border-0 bg-transparent"
                     (click)="onDelete(companyList.id)"></button>
@@ -26,4 +28,5 @@
         </ul>
     </a>
     <!-- End: List Of Company -->
+
 </section>

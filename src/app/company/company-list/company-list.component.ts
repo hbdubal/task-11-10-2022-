@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BreadcrumbServiceService } from 'src/app/core/service/breadcrumb-service.service';
 import { CompanyService } from 'src/app/service/company.service';
+import { Company } from '../company.model';
 
 
 @Component({
@@ -12,8 +13,8 @@ import { CompanyService } from 'src/app/service/company.service';
 export class CompanyListComponent implements OnInit {
   public company: any;
   public searchText: string = '';
-
-  constructor(private companyService: CompanyService, private router: Router,private breadcrumbService:BreadcrumbServiceService) {
+  public listCompanyData: Company[]=[];
+  constructor(private companyService: CompanyService, private router: Router, private breadcrumbService: BreadcrumbServiceService) {
     this.company = [];
   }
 
@@ -38,19 +39,28 @@ export class CompanyListComponent implements OnInit {
   //Update Data
   onEditList(id: number) {
     this.router.navigate(['company/edit', id])
-    this.breadcrumbService.breadcrumb.next('edit');
+    this.breadcrumbService.breadcrumb.next('Edit');
   }
 
   //Delete Data
   onDelete(id: number) {
-    this.companyService.deleteData(id).subscribe(resp => {
-      this.getCompanyData();
-    })
+    if (confirm('Are you sure you want to delete this?')) {
+      this.companyService.deleteData(id).subscribe(resp => {
+        this.getCompanyData();
+      })
+    }
+    else {
+      this.router.navigate(['company/add']);
+    }
   }
 
   //Form onclick Event
   onAdd() {
     this.router.navigate(['company/add']);
-    this.breadcrumbService.breadcrumb.next('add');
+    this.breadcrumbService.breadcrumb.next('Add');
   }
+
+  
+  
 }
+
