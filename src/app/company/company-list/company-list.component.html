@@ -10,14 +10,14 @@
 
     <!-- Start: Search-box -->
     <div class="search-box">
-        <input class="searchBar w-100" type="search" placeholder="Search here..." [(ngModel)]="searchText" />
+        <input class="searchBar w-100" type="search" placeholder="Search here..." [(ngModel)]="searchText"/>
     </div>
     <!-- End: Search-box -->
 
     <!-- Start: List Of Company -->
     <a class="text-decoration-none listdata">
-        <ul class="list-group mt-3 d-flex" *ngIf="companyList | searchFilter:searchText as filterList">
-            <li class="list-group-item my-2" *ngFor="let companyList of company">
+        <ul class="list-group mt-3 d-flex" *ngIf="company | searchFilter:searchText as filterList">
+            <li class="list-group-item my-2" *ngFor="let companyList of filterList">
                 <div class="d-flex align-items-center justify-content-space-between"
                     (click)="onEditList(companyList.id)">
                     <span class="p-2 rounded-circle" style="background-color: #85b1c7;"> {{companyList.companyName |
@@ -27,8 +27,8 @@
                         (click)="onDelete(companyList.id)"></button>
                 </div>
             </li>
+            <span *ngIf="filterList.length===0"> No Data Found</span>
         </ul>
     </a>
     <!-- End: List Of Company -->
-    <!-- <p *ngIf="filterList.length===0">No data found</p> -->
 </section>
