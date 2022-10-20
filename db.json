@@ -1,7 +1,7 @@
 {
   "company": [
     {
-      "companyName": "hiral duballll",
+      "companyName": "hiral duballl",
       "companyDescription": "Front-end developer",
       "companyTags": [
         {
@@ -23,22 +23,6 @@
       ],
       "companyLogo": "",
       "id": 2
-    },
-    {
-      "companyName": "yesha gandhi",
-      "companyDescription": "fashion designer",
-      "companyTags": [
-        {
-          "id": 5,
-          "name": "Angular"
-        },
-        {
-          "id": 2,
-          "name": "Codeigniter"
-        }
-      ],
-      "companyLogo": "",
-      "id": 3
     },
     {
       "companyName": "sheetal patel",
@@ -67,6 +51,18 @@
       ],
       "companyLogo": "",
       "id": 5
+    },
+    {
+      "companyName": "imesh dubal",
+      "companyDescription": "event",
+      "companyTags": [
+        {
+          "id": 1,
+          "name": "Laravel"
+        }
+      ],
+      "companyLogo": "C:\\fakepath\\company.PNG",
+      "id": 6
     }
   ]
 }

@@ -10,20 +10,25 @@
 
     <!-- Start: Search-box -->
     <div class="search-box">
-        <input class="searchBar w-100" type="text" placeholder="Search here..." [(ngModel)]="searchText" />
+        <input class="searchBar w-100" type="search" placeholder="Search here..." [(ngModel)]="searchText" />
     </div>
     <!-- End: Search-box -->
 
     <!-- Start: List Of Company -->
     <a class="text-decoration-none listdata">
-        <ul class="list-group mt-3 d-flex" *ngFor="let companyList of company | searchFilter:searchText">
-            <li class="list-group-item d-flex align-items-center justify-content-space-between" (click)="onEditList(companyList.id)">
-                <span class="p-2 rounded-circle" style="background-color: #85b1c7;"> {{companyList.companyName | nameInitials}}</span>
-                <span> {{companyList.companyName | titlecase}} </span>
-                <button class="delete-icon bi bi-x-square border-0 bg-transparent"
-                    (click)="onDelete(companyList.id)"></button>
+        <ul class="list-group mt-3 d-flex" *ngIf="companyList | searchFilter:searchText as filterList">
+            <li class="list-group-item my-2" *ngFor="let companyList of company">
+                <div class="d-flex align-items-center justify-content-space-between"
+                    (click)="onEditList(companyList.id)">
+                    <span class="p-2 rounded-circle" style="background-color: #85b1c7;"> {{companyList.companyName |
+                        nameInitials}}</span>
+                    <span> {{companyList.companyName | titlecase}} </span>
+                    <button class="delete-icon bi bi-x-square border-0 bg-transparent"
+                        (click)="onDelete(companyList.id)"></button>
+                </div>
             </li>
         </ul>
     </a>
     <!-- End: List Of Company -->
+    <!-- <p *ngIf="filterList.length===0">No data found</p> -->
 </section>
