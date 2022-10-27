@@ -11,7 +11,7 @@ export class SearchFilterPipe implements PipeTransform {
     if (!searchText) return values;
 
     searchText = searchText.toLowerCase();
-
+      
     return values.filter((company)=> {
       return JSON.stringify(company).toLowerCase().includes(searchText);
     });

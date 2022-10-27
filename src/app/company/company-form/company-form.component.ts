@@ -15,6 +15,8 @@ export class CompanyFormComponent implements OnInit {
   public id: any;
   company: any;
 
+  selectedFile = null;
+
   constructor(private fb: FormBuilder, public companyService: CompanyService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.companyForm = new FormGroup('');
     this.activatedRoute.params.subscribe((params) => {
@@ -47,6 +49,7 @@ export class CompanyFormComponent implements OnInit {
     })
   }
 
+
   //  Submit And Post Data On Button Click Event 
   submit() {
     this.isSubmitted = true;
@@ -68,16 +71,37 @@ export class CompanyFormComponent implements OnInit {
       this.router.navigate(['company']);
     }))
   }
+
+  /**
+   * Get CompanyData By Id
+   */
   getCompanybyId() {
     this.companyService.getDataById(this.id).subscribe((data) => {
       this.companyForm.patchValue(data);
     })
   }
+
   //  Reset Data On Button Click Event 
   onReset() {
     this.companyForm.reset();
   }
-}
+
+  /**
+   * Upload Image
+   */
+  onFileSelected(event: any) {
+    console.log(event);
+    
+    // if (event.target.files) {
+    //   for (let i = 0; i < File.length; i++)
+    //   {
+    //     let fileReader=new FileReader()
+    //     fileReader.readAsDataURL(event.target.files[i]) 
+
+    //   }
+    }
+    // this.selectedFile=event.target.files[0];
+  }
 
 
 

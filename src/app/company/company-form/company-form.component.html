@@ -30,9 +30,8 @@
                 </div>
             </div>
             <div class="my-3">
-                <!-- <input formControlName="companyLogo" id="file" type="file" multiple class="form-control">
-                -->
                 <input formControlName="companyLogo" type="file" class="file-upload form-control" onchange="console.log(event.target.files)">
+                <!-- <input formControlName="companyLogo" type="file" class="file-upload form-control" (change)="onFileSelected($event)" multiple> -->
             </div>
             <div class="my-3 d-flex justify-content-end">
                 <button type="reset" class="btn btn-warning me-4" (click)="onReset()">Cancle</button>
